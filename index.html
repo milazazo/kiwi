@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+				<style>
+    
+	:root  {
+		--width: 45rem;
+		--border: 1.5px solid var(--main-color);
+		--font-main: "Freckle Face", sans-serif;
+		--font-secondary: "Nunito", sans-serif;
+		--font-scale: 1rem;
+		--font-space: 0.2rem;
+		--background-color: #4e883a;
+        --content-background-color: #e0ded7;
+		--text-color: #463a35;
+		--main-color: #4e883a;
+		--accent-color: #87c935;
+		--gray-color: hwb(from var(--text-color) h w b / 20%);
+		--white-color: #f7f7f7;
+		--transition-time: 0.15s ease-in-out;
+		--button-width: 8rem;
+	}
+    body  {
+		margin: 2rem;
+		background-color: var(--background-color);
+        background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+        color: var(--text-color);
+		text-align: left; font-family: var(--font-secondary); font-size: var(--font-scale);
+		word-wrap: break-word; overflow-wrap: break-word;
+		-ms-overflow-style: none; scrollbar-width: none;
+	}
+    
+    main {
+        position: absolute;
+        top: 5rem;
+        left: 20rem;
+        width: 58rem;
+        height: 40rem;
+        padding: 1rem 2rem;
+        background-color: var(--content-background-color);
+        border-radius: 4rem 0;
+        overflow-y: scroll;
+    }
+
+    header{
+        z-index: 500;
+        position: absolute;
+        top: 15rem;
+        right: 10rem;
+    }
+
+    h1, h2{
+        font-family: var(--font-main); color: var(--background-color); 
+    }
+
+    h2{
+        border-bottom: 2px solid var(--accent-color);
+    }
+
+    #side{
+        z-index:500; position: absolute; bottom: 0rem; right: 2rem;
+        width: 35rem;
+        font-family: var(--font-main);
+        color: var(--accent-color);
+        & #title{
+            width: 100%;
+            & path {fill: transparent;}
+            & text {fill: var(--accent-color);font-size: 5.5rem;}}
+        & #kiwi{
+            position: relative;
+            top: -6rem;
+            left: -5rem;
+            width: 100%;
+        }
+    }
+
+    #container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .member{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        align-items: start;
+        & .section:first-of-type{text-align: center;}
+    }
+
+    nav{
+        position: absolute;
+        left: 20rem;
+        bottom: 8rem;
+        & .link{
+            display: inline-block;
+            margin-right: 2rem;
+            font-family: var(--font-main);
+            color: var(--accent-color);
+            font-size: 3rem;
+            &::before{content:"🥝 "; font-size: 2.5rem;}
+        }
+    }
+    </style>
+			</head>
+<body>
+	<div id="side">
+		<svg id="title" viewBox="0 -30 500 200">
+			<path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"/>
+			<text width="500"><textPath xlink:href="#curve">kiwebring</textPath></text>
+		</svg>
+		<img id="kiwi" src="/kiwi.svg">
+    </div>
+    <nav>
+        <div class="link">rules + join</div>
+        <div class="link">members</div>
+        <div class="link">code</div>
+    </nav>
+
+	<main>
+						<h1>🥝 welcome to the aotearoa new zealand webring!</h1>
+						<p>kiwebring is a weblisting for personal sites and blogs based in aotearoa new zealand. for more information on what webrings are, visit [ADD LINK HERE LATER].</p>
+						<div id="container">
+							<div class="section">
+								<h2>rules</h2>
+								<ul>
+									<li>websites made by handcoding, on a CMS, or on a dedicated blogging platform are all OK.
+                                    <li>no single page websites (carrd, strawpage) or social media (tumblr, instagram, etc.), and no commercial websites.</li>
+									<li>websites with hateful (racist, homophobic, transphobic, etc.) content will not be added.</li>
+									<li>websites with NSFW are OK, just mention it in the rating section.</li>
+									<li>you must link back to the webring using one of the dedicated codes within 1 month of being added.</li>
+								</ul>
+							</div>
+							<div class="section">
+								<h2>join </h2>
+                                <p>to join, email <b>wulfpaper@gmail.com</b> with this form:</p>
+								<ul>
+									<li>URL:</li>
+									<li>button link:</li>
+									<li>description:</li>
+									<li>region: (optional)</li>
+                                    <li>rating: (SFW, mature, NSFW)</li>
+								</ul>
+                                <p>you'll usually get a response within a week. once you've been added to the list, you can put one of the codes on your site.</p>
+							</div>
+						</div>
+						<h2>members</h2>
+						<div class="member">
+							<div class="section">
+								<a href="">
+									<img src="https://wulfpaper.net/assets/button/wulfpaper.png"/></a>
+								</div>
+                                <div class="section">
+                                    my description goes here (auckland)
+                                </div>
+						</div>
+						<div class="member">
+							<div class="section">
+								<a href="">
+									<img src="https://wulfpaper.net/assets/button/wulfpaper.png"/></a>
+								</div>
+                                <div class="section">
+                                    my description goes here
+                                </div>
+						</div>
+						<div class="member">
+							<div class="section">
+								<a href="">
+									<img src="https://wulfpaper.net/assets/button/wulfpaper.png"/></a>
+								</div>
+                                <div class="section">
+                                    my description goes here
+                                </div>
+						</div>
+						<div class="member">
+							<div class="section">
+								<a href="">
+									<img src="https://wulfpaper.net/assets/button/wulfpaper.png"/></a>
+								</div>
+                                <div class="section">
+                                    my description goes here
+                                </div>
+						</div>
+					</main>
+				</body>
+			</html>
