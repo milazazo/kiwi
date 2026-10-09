@@ -12,16 +12,12 @@
 		--font-main: "Freckle Face", sans-serif;
 		--font-secondary: "Nunito", sans-serif;
 		--font-scale: 1rem;
-		--font-space: 0.2rem;
 		--background-color: #4e883a;
         --content-background-color: #e0ded7;
 		--text-color: #463a35;
 		--main-color: #4e883a;
 		--accent-color: #87c935;
-		--gray-color: hwb(from var(--text-color) h w b / 20%);
-		--white-color: #f7f7f7;
-		--transition-time: 0.15s ease-in-out;
-		--button-width: 8rem;
+		--drop-shadow: drop-shadow(3px 3px 3px #1d1d2531);
 	}
     body  {
 		margin: 2rem;
@@ -32,77 +28,90 @@
 		word-wrap: break-word; overflow-wrap: break-word;
 		-ms-overflow-style: none; scrollbar-width: none;
 	}
+
+    b { color: var(--background-color);}
+    a { color: var(--background-color);}
     
     main {
-        position: absolute;
-        top: 5rem;
-        left: 20rem;
-        width: 58rem;
-        height: 40rem;
-        padding: 1rem 2rem;
+        position: absolute; top: 5rem; left: 20rem;
+        width: 58rem; height: 40rem; padding: 1rem 2rem; border-radius: 4rem 0; overflow-y: scroll;
         background-color: var(--content-background-color);
-        border-radius: 4rem 0;
-        overflow-y: scroll;
+        filter: var(--drop-shadow);
+        -ms-overflow-style: none;  /* IE and Edge */ scrollbar-width: none;  /* Firefox */
+        &::-webkit-scrollbar{display: none;}
     }
 
-    header{
-        z-index: 500;
-        position: absolute;
-        top: 15rem;
-        right: 10rem;
-    }
+    h1, h2 {font-family: var(--font-main); color: var(--background-color);}
+    h2 {border-bottom: 2px solid var(--accent-color); letter-spacing: 0.1rem; margin-top: 3rem;}
+    hr {border-style: dotted; color: var(--accent-color); margin-top: 3rem; margin-bottom: 3rem;}
 
-    h1, h2{
-        font-family: var(--font-main); color: var(--background-color); 
-    }
-
-    h2{
-        border-bottom: 2px solid var(--accent-color);
-    }
-
-    #side{
-        z-index:500; position: absolute; bottom: 0rem; right: 2rem;
-        width: 35rem;
-        font-family: var(--font-main);
-        color: var(--accent-color);
-        & #title{
+    #side {
+        z-index:500; position: absolute; bottom: 3.5rem; right: 5rem;
+        width: 30rem;
+        font-family: var(--font-main); color: var(--accent-color);
+        & #title {
             width: 100%;
             & path {fill: transparent;}
             & text {fill: var(--accent-color);font-size: 5.5rem;}}
-        & #kiwi{
-            position: relative;
-            top: -6rem;
-            left: -5rem;
+        & #kiwi {
+            position: relative; top: -6rem; left: -5rem;
             width: 100%;
         }
+        filter: var(--drop-shadow);
     }
 
-    #container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
+    .container {display: grid; gap: 3rem;}
+    #rules-join {grid-template-columns: 1fr 1fr;}
+    #code-svg {grid-template-columns: 2fr 5fr;}
+    #code-text {grid-template-columns: 2fr 2fr 3fr;}
 
     .member{
-        display: grid;
-        grid-template-columns: 1fr 5fr;
-        align-items: start;
-        & .section:first-of-type{text-align: center;}
+        display: grid; grid-template-columns: 1fr 5fr 1fr; align-items: start;
+        height: fit-content; padding: 0.5rem 0;
+        & .section:first-of-type {text-align: center;}
+        &:nth-child(2n){background-color: #eaeed9;}
     }
 
     nav{
-        position: absolute;
-        left: 20rem;
-        bottom: 8rem;
+        z-index: 500; position: absolute; left: 20rem; bottom: 6rem;
         & .link{
             display: inline-block;
             margin-right: 2rem;
-            font-family: var(--font-main);
-            color: var(--accent-color);
-            font-size: 3rem;
+            font-family: var(--font-main); font-size: 3rem; color: var(--accent-color); 
             &::before{content:"🥝 "; font-size: 2.5rem;}
         }
+        filter: var(--drop-shadow);
     }
+
+    #kiwebring {
+        display: inline-block; position: relative; width: 10rem; height: 3.5rem; filter: drop-shadow(3px 3px 3px #1d1d2531); 
+        border-radius: 1rem 0; padding: 0.4rem 1rem; background-color: #eaeed9;
+        color: #463a35; text-align: left;
+        & a { text-decoration: none; color: #463a35; }
+        & b { color: #4e883a ; font-size: 1.4rem; }
+        & img {position: absolute; top: -0.5rem; right: -2rem; width: 6rem;}
+    }
+    @media only screen and (min-width: 1280px) {.mobile-only{display: none !important;;}}
+
+    @media only screen and (max-width: 1280px)   {
+        main {
+        position: initial; margin-left: auto; margin-right: auto;
+        width: 90%; height: 100%;
+        }
+    
+        h2 {margin-top: 2rem;}
+        .container {gap: 0;}
+        #rules-join {grid-template-columns: 1fr;}
+        #side, nav {display: none;}
+        #code-svg {grid-template-columns: 1fr; text-align: center;}
+        #code-text {grid-template-columns: 1fr; text-align: center;}
+        
+        .member{
+            grid-template-columns: 1fr; text-align: center;
+            & .section:nth-child(3) {font-size: smaller;}
+        }
+    }
+
     </style>
 			</head>
 <body>
@@ -116,59 +125,59 @@
     <nav>
         <div class="link">rules + join</div>
         <div class="link">members</div>
-        <div class="link">code</div>
+        <div class="link">codes</div>
     </nav>
 
 	<main>
 						<h1>🥝 welcome to the aotearoa new zealand webring!</h1>
-						<p>kiwebring is a weblisting for personal sites and blogs based in aotearoa new zealand. for more information on what webrings are, visit [ADD LINK HERE LATER].</p>
-						<div id="container">
+						<p><b>kiwebring</b> is a weblisting for non-commercial sites and blogs based in <b>aotearoa (new zealand)</b>. it connects websites from the country via a cute widget you place on your site. for more information on webrings and their history, visit <a href="https://brisray.com/web/webring-history.htm">brisray.com</a>.</p>
+                                    <div id="kiwebring" class="mobile-only"><img src="/kiwi.svg">
+                                        <b>kiwebring</b><br>◀⠀random⠀▶                        
+                                    </div>
+						<div id="rules-join" class="container">
 							<div class="section">
 								<h2>rules</h2>
 								<ul>
-									<li>websites made by handcoding, on a CMS, or on a dedicated blogging platform are all OK.
-                                    <li>no single page websites (carrd, strawpage) or social media (tumblr, instagram, etc.), and no commercial websites.</li>
-									<li>websites with hateful (racist, homophobic, transphobic, etc.) content will not be added.</li>
+                                    <li>you can be <b>currently or previously based in new zealand</b> (if previously based here, please specify in the form). your content doesn't need to be NZ-focused.</li>
+                                    <li>this isn't limited to personal websites; non-commercial sites run by groups are also welcome as long as you follow the other rules.</li>
+                                    <li><b>no</b> single page websites (carrd, strawpage, etc.), social media (tumblr, instagram, etc.), or commercial websites.</li>
+									<li><b>no</b> websites with hateful (racist, homophobic, transphobic, etc.) content.</li>
 									<li>websites with NSFW are OK, just mention it in the rating section.</li>
-									<li>you must link back to the webring using one of the dedicated codes within 1 month of being added.</li>
+									<li>you <b>must link back to the webring</b> with one of the codes within 1 month of being added as a member.</li>
+                                    <li>an 88x31px button is preferred, but if you don't have one i'll use a placeholder with your site name.</li>
 								</ul>
 							</div>
 							<div class="section">
-								<h2>join </h2>
+								<h2>join</h2>
                                 <p>to join, email <b>wulfpaper@gmail.com</b> with this form:</p>
 								<ul>
-									<li>URL:</li>
-									<li>button link:</li>
-									<li>description:</li>
-									<li>region: (optional)</li>
-                                    <li>rating: (SFW, mature, NSFW)</li>
+									<li><b>URL:</b></li>
+									<li><b>button link:</b> (optional)</li>
+									<li><b>description:</b></li>
+									<li><b>region:</b> (optional)</li>
+                                    <li><b>rating:</b> (SFW, mature, NSFW)</li>
 								</ul>
                                 <p>you'll usually get a response within a week. once you've been added to the list, you can put one of the codes on your site.</p>
 							</div>
 						</div>
 						<h2>members</h2>
+                        <div id="members">
 						<div class="member">
 							<div class="section">
-								<a href="">
+								<a href="https://wulfpaper.net/" title="wulfpaper">
 									<img src="https://wulfpaper.net/assets/button/wulfpaper.png"/></a>
 								</div>
                                 <div class="section">
-                                    my description goes here (auckland)
+                                    personal blog and gallery. mainly talks about art, writing, and local pro wrestling.
+                                </div>
+                                <div class="section">
+                                    auckland
                                 </div>
 						</div>
 						<div class="member">
 							<div class="section">
 								<a href="">
-									<img src="https://wulfpaper.net/assets/button/wulfpaper.png"/></a>
-								</div>
-                                <div class="section">
-                                    my description goes here
-                                </div>
-						</div>
-						<div class="member">
-							<div class="section">
-								<a href="">
-									<img src="https://wulfpaper.net/assets/button/wulfpaper.png"/></a>
+									<img src="https://88x31.nl/gifs/mathcom.gif"/></a>
 								</div>
                                 <div class="section">
                                     my description goes here
@@ -177,12 +186,92 @@
 						<div class="member">
 							<div class="section">
 								<a href="">
-									<img src="https://wulfpaper.net/assets/button/wulfpaper.png"/></a>
+									<img src="https://88x31.nl/gifs/mathcom.gif"/></a>
 								</div>
                                 <div class="section">
                                     my description goes here
                                 </div>
 						</div>
+						<div class="member">
+							<div class="section">
+								<a href="">
+									<img src="https://88x31.nl/gifs/mathcom.gif"/></a>
+								</div>
+                                <div class="section">
+                                    my description goes here
+                                </div>
+						</div>
+                        </div>
+                        <div id="codes">
+                            <h2>codes</h2>
+
+                            <div id="code-svg" class="container">
+                                <div class="section" style="text-align: center;">
+                                    <br>
+                                    <div id="kiwebring"><img src="https://kiwi.wulfpaper.net/kiwi.svg">
+                                        <a href="https://kiwi.wulfpaper.net/"><b>kiwebring</b></a><br><a href="https://kiwi.wulfpaper.net/?action=previous">◀</a>⠀<a href="https://kiwi.wulfpaper.net/?action=random">random</a>⠀<a href="https://kiwi.wulfpaper.net/?action=next">▶</a>                           
+                                    </div>
+                                    <br><br>
+                                    <b>CSS</b><br>
+                                    <textarea>
+                                        dfsdf
+                                    </textarea><br>
+                                    <b>HTML</b><br>
+                                    <textarea>
+                                        dfsdf
+                                    </textarea>
+                                </div>
+                                <div class="section">
+                            <p>how about a different cultivar? replace the image link with your desired kiwi.</p>
+                            <img src="https://kiwi.wulfpaper.net/kiwi.svg" width="100px">
+                            <img src="https://kiwi.wulfpaper.net/kiwi-green.svg" width="100px">
+                            <img src="https://kiwi.wulfpaper.net/kiwi-gold.svg" width="100px">
+                            <img src="https://kiwi.wulfpaper.net/kiwi-red.svg" width="100px">
+                            <img src="https://kiwi.wulfpaper.net/kiwi-skin.svg" width="100px">
+                            <p>you can also edit the SVG or CSS as you wish!<br>note: the font isn't embedded, so it will use whatever your default font is.</p>
+                                </div>
+                            </div><hr>
+                            <div id="code-text" class="container">
+                                <div class="section">
+                                    <div style="text-align: center;">
+                                    <div>
+                                        <a href="https://kiwi.wulfpaper.net/"><b>kiwebring (AO/NZ)</b></a><br />
+                                        <a href="https://kiwi.wulfpaper.net/?action=previous">◀</a>
+                                        <a href="https://kiwi.wulfpaper.net/?action=random">random</a>
+                                        <a href="https://kiwi.wulfpaper.net/?action=next">▶</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="section" style="text-align: center;">
+                                    <b>HTML</b><br>
+                                    <textarea>
+                                        dfsdf
+                                    </textarea>
+                                </div>
+                                <div class="section">
+                                    <p>text-only version. pretty straightforward!</p>
+                                </div>
+                            </div><hr>
+                            <p>feel free to use your own codes, just make sure it uses the same index/prev/next links.<br>if you want to share a code, email me at <b>wulfpaper@gmail.com</b>!</p>
+                            <h2>credits</h2>
+                            <br><br><br>
+                        </div>
 					</main>
-				</body>
-			</html>
+
+<script>
+  const members = [
+    {
+      url: "https://wulfpaper.net/",
+      title: "wulfpaper"
+    },
+    {
+      url: "https://wikipedia.org/",
+      title: "wikipedia"
+    },
+  ];
+</script>
+<script src="https://petrapixel.neocities.org/assets/js/webringu.js?nocache=1"></script>
+</body>
+
+
+</html>
