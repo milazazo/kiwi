@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-			<link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
-				<style>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <title>kiwebing | new zealand webring</title>
+    <meta name="description" content="classic webring for non-commercial sites and blogs based in aotearoa new zealand!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/kiwi.svg">
+
+	<style>
     
 	:root  {
 		--width: 45rem;
@@ -22,7 +28,7 @@
     body  {
 		margin: 2rem;
 		background-color: var(--background-color);
-        background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+        background-image: url("/bg.png");
         color: var(--text-color);
 		text-align: left; font-family: var(--font-secondary); font-size: var(--font-scale);
 		word-wrap: break-word; overflow-wrap: break-word;
@@ -74,10 +80,10 @@
 
     nav{
         z-index: 500; position: absolute; left: 20rem; bottom: 6rem;
-        & .link{
+        & a.link{
             display: inline-block;
             margin-right: 2rem;
-            font-family: var(--font-main); font-size: 3rem; color: var(--accent-color); 
+            font-family: var(--font-main); font-size: 3rem; color: var(--accent-color); text-decoration: none;
             &::before{content:"🥝 "; font-size: 2.5rem;}
         }
         filter: var(--drop-shadow);
@@ -91,11 +97,15 @@
         & b { color: #4e883a ; font-size: 1.4rem; }
         & img {position: absolute; top: -0.5rem; right: -2rem; width: 6rem;}
     }
-    @media only screen and (min-width: 1280px) {.mobile-only{display: none !important;;}}
+    @media only screen and (min-width: 1280px) {.mobile-only{display: none !important;}}
 
-    @media only screen and (max-width: 1280px)   {
+    @media only screen and (min-width: 1600px) and (max-width: 1800px) {
+        main, nav{left: 5rem}
+    }
+
+    @media only screen and (max-width: 1600px)   {
         main {
-        position: initial; margin-left: auto; margin-right: auto;
+        position: static; margin-left: auto; margin-right: auto; 
         width: 90%; height: 100%;
         }
     
@@ -123,17 +133,20 @@
 		<img id="kiwi" src="/kiwi.svg">
     </div>
     <nav>
-        <div class="link">rules + join</div>
-        <div class="link">members</div>
-        <div class="link">codes</div>
+        <a href="#rules-join" class="link">rules + join</a>
+        <a href="#members"class="link">members</a>
+        <a href="#codes"class="link">codes</a>
     </nav>
 
 	<main>
 						<h1>🥝 welcome to the aotearoa new zealand webring!</h1>
-						<p><b>kiwebring</b> is a weblisting for non-commercial sites and blogs based in <b>aotearoa (new zealand)</b>. it connects websites from the country via a cute widget you place on your site. for more information on webrings and their history, visit <a href="https://brisray.com/web/webring-history.htm">brisray.com</a>.</p>
-                                    <div id="kiwebring" class="mobile-only"><img src="/kiwi.svg">
+						<p><b>kiwebring</b> is a weblisting for non-commercial sites and blogs based in <b>aotearoa (new zealand)</b>. it connects websites from NZ via a cute widget you place on your site. for more information on webrings and their history, visit <a href="https://brisray.com/web/webring-history.htm">brisray.com</a>.</p>
+                        <div class="mobile-only" style="text-align: center; margin: 3rem 0">
+                            <div id="kiwebring" class="mobile-only"><img src="/kiwi.svg">
                                         <b>kiwebring</b><br>◀⠀random⠀▶                        
-                                    </div>
+                            </div>
+                        </div>
+
 						<div id="rules-join" class="container">
 							<div class="section">
 								<h2>rules</h2>
@@ -160,8 +173,8 @@
                                 <p>you'll usually get a response within a week. once you've been added to the list, you can put one of the codes on your site.</p>
 							</div>
 						</div>
-						<h2>members</h2>
                         <div id="members">
+						<h2>members</h2>
 						<div class="member">
 							<div class="section">
 								<a href="https://wulfpaper.net/" title="wulfpaper">
@@ -214,11 +227,11 @@
                                     <br><br>
                                     <b>CSS</b><br>
                                     <textarea>
-                                        dfsdf
+                                        TBA!!!
                                     </textarea><br>
                                     <b>HTML</b><br>
                                     <textarea>
-                                        dfsdf
+                                        TBA!!!
                                     </textarea>
                                 </div>
                                 <div class="section">
@@ -244,9 +257,12 @@
                                 </div>
                                 <div class="section" style="text-align: center;">
                                     <b>HTML</b><br>
-                                    <textarea>
-                                        dfsdf
-                                    </textarea>
+                                    <textarea><div>
+<a href="https://kiwi.wulfpaper.net/"><b>kiwebring (AO/NZ)</b></a><br />
+<a href="https://kiwi.wulfpaper.net/?action=previous">◀</a>
+<a href="https://kiwi.wulfpaper.net/?action=random">random</a>
+<a href="https://kiwi.wulfpaper.net/?action=next">▶</a>
+</div></textarea>
                                 </div>
                                 <div class="section">
                                     <p>text-only version. pretty straightforward!</p>
@@ -254,6 +270,10 @@
                             </div><hr>
                             <p>feel free to use your own codes, just make sure it uses the same index/prev/next links.<br>if you want to share a code, email me at <b>wulfpaper@gmail.com</b>!</p>
                             <h2>credits</h2>
+                            <ul>
+                                <li><b>background:</b> <a href="https://www.transparenttextures.com/">atle mo via transparent textures</a></li>
+                                <li><b>webring code:</b> <a href="https://petrapixel.neocities.org/coding/webringu">petrapixel</a></li>
+                            </ul>
                             <br><br><br>
                         </div>
 					</main>
