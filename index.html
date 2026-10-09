@@ -4,6 +4,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <title>kiwebing | new zealand webring</title>
     <meta name="description" content="classic webring for non-commercial sites and blogs based in aotearoa new zealand!" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +27,6 @@
 		--drop-shadow: drop-shadow(3px 3px 3px #1d1d2531);
 	}
     body  {
-		margin: 2rem;
 		background-color: var(--background-color);
         background-image: url("/bg.png");
         color: var(--text-color);
@@ -90,12 +90,12 @@
     }
 
     #kiwebring {
-        display: inline-block; position: relative; width: 10rem; height: 3.5rem; filter: drop-shadow(3px 3px 3px #1d1d2531); 
+        display: inline-block; position: relative; width: 11rem; height: 3.5rem; filter: drop-shadow(3px 3px 3px #1d1d2531); 
         border-radius: 1rem 0; padding: 0.4rem 1rem; background-color: #eaeed9;
         color: #463a35; text-align: left;
         & a { text-decoration: none; color: #463a35; }
         & b { color: #4e883a ; font-size: 1.4rem; }
-        & img {position: absolute; top: -0.5rem; right: -2rem; width: 6rem;}
+        & img {position: absolute; top: -0.5rem; right: -1rem; width: 6rem;}
     }
     @media only screen and (min-width: 1280px) {.mobile-only{display: none !important;}}
 
@@ -105,8 +105,8 @@
 
     @media only screen and (max-width: 1600px)   {
         main {
-        position: static; margin-left: auto; margin-right: auto; 
-        width: 90%; height: 100%;
+        position: initial; margin: 1rem auto;
+        width: 85%; height: 100%; padding: 1rem;
         }
     
         h2 {margin-top: 2rem;}
@@ -141,10 +141,10 @@
 	<main>
 						<h1>🥝 welcome to the aotearoa new zealand webring!</h1>
 						<p><b>kiwebring</b> is a weblisting for non-commercial sites and blogs based in <b>aotearoa (new zealand)</b>. it connects websites from NZ via a cute widget you place on your site. for more information on webrings and their history, visit <a href="https://brisray.com/web/webring-history.htm">brisray.com</a>.</p>
-                        <div class="mobile-only" style="text-align: center; margin: 3rem 0">
-                            <div id="kiwebring" class="mobile-only"><img src="/kiwi.svg">
-                                        <b>kiwebring</b><br>◀⠀random⠀▶                        
-                            </div>
+                        <div class="mobile-only" style="text-align: center; margin: 2rem 0">
+                                    <div id="kiwebring"><img src="https://kiwi.wulfpaper.net/kiwi.svg">
+                                        <a href="https://kiwi.wulfpaper.net/"><b>kiwebring</b></a><br><a href="https://kiwi.wulfpaper.net/?action=previous">◀</a>⠀<a href="https://kiwi.wulfpaper.net/?action=random">random</a>⠀<a href="https://kiwi.wulfpaper.net/?action=next">▶</a>                           
+                                    </div>
                         </div>
 
 						<div id="rules-join" class="container">
