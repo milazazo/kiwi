@@ -5,7 +5,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <title>kiwebing | new zealand webring</title>
+    <title>kiwebring | new zealand webring</title>
     <meta name="description" content="classic webring for non-commercial sites and blogs based in aotearoa new zealand!" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -45,10 +45,12 @@
         filter: var(--drop-shadow);
         -ms-overflow-style: none;  /* IE and Edge */ scrollbar-width: none;  /* Firefox */
         &::-webkit-scrollbar{display: none;}
+        transition: 0.5s;
     }
 
     h1, h2 {font-family: var(--font-main); color: var(--background-color);}
-    h2 {border-bottom: 2px solid var(--accent-color); letter-spacing: 0.1rem; margin-top: 3rem;}
+    h2 {border-bottom: 2px solid var(--accent-color); letter-spacing: 0.1rem; margin-top: 3rem;
+        &::before{content:"🥝 "; font-size: 1.2rem;}}
     hr {border-style: dotted; color: var(--accent-color); margin-top: 3rem; margin-bottom: 3rem;}
 
     #side {
@@ -87,28 +89,45 @@
             &::before{content:"🥝 "; font-size: 2.5rem;}
         }
         filter: var(--drop-shadow);
+        transition: 0.2s;
     }
 
     #kiwebring {
-        display: inline-block; position: relative; width: 11rem; height: 3.5rem; filter: drop-shadow(3px 3px 3px #1d1d2531); 
+        display: inline-block; position: relative; width: 11rem; height: 3.5rem; 
         border-radius: 1rem 0; padding: 0.4rem 1rem; background-color: #eaeed9;
         color: #463a35; text-align: left;
         & a { text-decoration: none; color: #463a35; }
         & b { color: #4e883a ; font-size: 1.4rem; }
         & img {position: absolute; top: -0.5rem; right: -1rem; width: 6rem;}
     }
+
+    #kiwebring-button {
+        display: inline-block; position: relative; width: 86px; height: 31px; overflow: hidden;
+        border: 1px solid #4e883a; border-radius: 5px 0; padding: 0; background-color: #eaeed9;
+        font-family: Arial, Helvetica, sans-serif; color: #463a35; text-align: left;
+        & #kiwebring-button-link { position: absolute; top: 9px; left: 10px; letter-spacing: -3px;
+            & a {text-decoration: none; color: #463a35; font-size: 10px;} }
+        & b { position: absolute; left: 6px; top: 4px; color: #4e883a ; font-size: 10px; letter-spacing: 1px; }
+        & img {position: absolute; top: 3px; right: -13px; height: 45px;}
+    }
+
     @media only screen and (min-width: 1280px) {.mobile-only{display: none !important;}}
 
     @media only screen and (min-width: 1600px) and (max-width: 1800px) {
-        main, nav{left: 5rem}
+        main, nav{left: 5rem;} nav{bottom: 2rem;}
     }
 
     @media only screen and (max-width: 1600px)   {
-        main {
-        position: initial; margin: 1rem auto;
-        width: 85%; height: 100%; padding: 1rem;
+        body{
+            margin: 0 0.5rem;
         }
-    
+
+        main {
+        position: initial; margin: auto auto;
+        border-radius: 0; width: 95%; height: 100%; padding: 0.5rem;
+        }
+        
+        h1 {text-align: center;}
         h2 {margin-top: 2rem;}
         .container {gap: 0;}
         #rules-join {grid-template-columns: 1fr;}
@@ -139,8 +158,9 @@
     </nav>
 
 	<main>
-						<h1>🥝 welcome to the aotearoa new zealand webring!</h1>
+						<h1>welcome to the aotearoa new zealand webring!</h1>
 						<p><b>kiwebring</b> is a weblisting for non-commercial sites and blogs based in <b>aotearoa (new zealand)</b>. it connects websites from NZ via a cute widget you place on your site. for more information on webrings and their history, visit <a href="https://brisray.com/web/webring-history.htm">brisray.com</a>.</p>
+
                         <div class="mobile-only" style="text-align: center; margin: 2rem 0">
                                     <div id="kiwebring"><img src="https://kiwi.wulfpaper.net/kiwi.svg">
                                         <a href="https://kiwi.wulfpaper.net/"><b>kiwebring</b></a><br><a href="https://kiwi.wulfpaper.net/?action=previous">◀</a>⠀<a href="https://kiwi.wulfpaper.net/?action=random">random</a>⠀<a href="https://kiwi.wulfpaper.net/?action=next">▶</a>                           
@@ -242,6 +262,26 @@
                             <img src="https://kiwi.wulfpaper.net/kiwi-red.svg" width="100px">
                             <img src="https://kiwi.wulfpaper.net/kiwi-skin.svg" width="100px">
                             <p>you can also edit the SVG or CSS as you wish!<br>note: the font isn't embedded, so it will use whatever your default font is.</p>
+                                </div>
+                            </div><hr>
+                            <div id="code-text" class="container">
+                                <div class="section" style="text-align: center;">
+                                        <div id="kiwebring-button"><a href="https://kiwi.wulfpaper.net/"><img src="https://kiwi.wulfpaper.net/kiwi.svg"></a>
+                                        <a href="https://kiwi.wulfpaper.net/"><b>kiwebring</b></a><br><span id="kiwebring-button-link"><a href="https://kiwi.wulfpaper.net/?action=previous" class=>◀</a>⠀<a href="https://kiwi.wulfpaper.net/?action=random">?</a>⠀<a href="https://kiwi.wulfpaper.net/?action=next">▶</a></span>                         
+                                    </div>
+                                </div>
+                                <div class="section" style="text-align: center;">
+                                    <b>CSS</b><br>
+                                    <textarea>
+                                        TBA!!!
+                                    </textarea><br>
+                                    <b>HTML</b><br>
+                                    <textarea>
+                                        TBA!!!
+                                    </textarea>
+                                </div>
+                                <div class="section">
+                                    interactive 88x31px button version!
                                 </div>
                             </div><hr>
                             <div id="code-text" class="container">
