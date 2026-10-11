@@ -78,6 +78,7 @@
     }
 
     .m-button {grid-area: button;} .m-desc {grid-area: desc;} .m-region {grid-area: loc;} .m-rating {grid-area: rating;}
+    #tabletop { background-color: var(--background-color); font-weight: 800; color: var(--content-background-color);}
 
     #codes .section {text-align: center;}
 
@@ -121,13 +122,18 @@
         #rules-join {grid-template-columns: 1fr; &.container {gap: 0;} }
         #code-svg, #code-text {grid-template-columns: 1fr; }
         #side, nav {display: none;}
-        
+    }
+
+    @media only screen and (max-width: 800px)   {
         .member{
             grid-template:
-            "button button button button loc rating" auto
-            "desc desc desc desc desc desc";
+            "button button button button loc" auto
+            "button button button button rating" auto
+            "desc desc desc desc desc";
             text-align: left;
+            & div { padding: 0rem 1rem; }
         }
-        .m-rating, .m-region {text-align: right; font-size: smaller;}
-        .m-rating::before { content: "rating: "}
+        .m-rating, .m-region { text-align: right; font-size: smaller; }
+        .m-rating::before { content: "rating: " }
+        #tabletop { display: none; }
     }
