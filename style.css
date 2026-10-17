@@ -36,7 +36,10 @@
     h1, h2 {font-family: var(--font-main); color: var(--background-color);}
     h2 {border-bottom: 2px solid var(--accent-color); letter-spacing: 0.1rem; margin-top: 3rem;
         &::before{content:"🥝 "; font-size: 1.2rem;}}
+    h3 {border-bottom: 2px dotted var(--accent-color); margin-top: 2rem}
     hr {border-style: dotted; color: var(--accent-color); margin-top: 3rem; margin-bottom: 3rem;}
+    
+    td {padding: 1rem; border: 2px dotted var(--accent-color)}
 
     #side {
         z-index:500; position: absolute; bottom: 3.5rem; right: 5rem;
@@ -128,7 +131,9 @@
         #side, nav {display: none;}
     }
 
-    @media only screen and (max-width: 800px)   {
+    @media only screen and (max-width: 1280px)   {
+        #mobile-links {text-align: center; & a {font-weight: 700; text-decoration: none;}}
+
         .member{
             grid-template:
             "button loc rating" auto
