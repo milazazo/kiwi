@@ -5,14 +5,18 @@
     },
     {
       url: "https://snowvalley.online/",
-      title: "snowvalley"
+      title: "Snow Valley"
     },
     {
       url: "https://allyratworld.com/",
-      title: "allyrat"
+      title: "AllyRat"
     },
     {
       url: "https://flamedfury.com/",
-      title: "flamedfury"
+      title: "Flamed Fury"
+    },
+    {
+      url: "https://wills.nekoweb.org/",
+      title: "Will's Web"
     },
   ];

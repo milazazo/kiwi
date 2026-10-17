@@ -70,15 +70,19 @@
     #code-svg {grid-template-columns: 2fr 5fr;}
     #code-text {grid-template-columns: 1fr 1fr 1fr 1fr;}
 
+    .m-button {grid-area: button} .m-desc {grid-area: desc} .m-region {grid-area: loc} .m-rating {grid-area: rating}
     .member{
-        display: grid; grid-template: "button desc loc rating" auto / 2fr 8fr 1fr 1fr; align-items:center;
-        height: fit-content; padding: 0.5rem 0; text-align: center;
-        & .section:first-of-type {text-align: center;}
-        &:nth-child(2n){background-color: #eaeed9;}
+        display: grid; grid-template: "button desc loc rating" auto / auto 70% 10% auto; justify-content: space-between;
+        height: fit-content; padding: 0.5rem 1rem;
+        font-size: smaller;
+        &:nth-child(2n) {background-color: #eaeed9;}
+        & > span:nth-child(3) {font-size: smaller; text-align: right; margin-right: 1rem}
     }
-
-    .m-button {grid-area: button;} .m-desc {grid-area: desc;} .m-region {grid-area: loc; font-size: smaller; } .m-rating {grid-area: rating; font-size: smaller; }
-    #tabletop { background-color: var(--background-color); font-weight: 800; color: var(--content-background-color);}
+    .m-rating{
+        &[data-rating="all ages"]::before { content: "✅" }
+        &[data-rating="mature"]::before { content: "⚠️" }
+        &[data-rating="adult only"]::before { content: "🔞" }
+    }
 
     #codes .section {text-align: center;}
 
@@ -127,13 +131,9 @@
     @media only screen and (max-width: 800px)   {
         .member{
             grid-template:
-            "button button loc loc loc" auto
-            "button button rating rating rating" auto
-            "desc desc desc desc desc";
-            text-align: left;
-            & div { padding: 0rem 1rem; }
+            "button loc rating" auto
+            "desc desc desc" / auto 10rem 1rem;
+            justify-content: normal;
+            height: fit-content; padding: 1rem 1rem;
         }
-        .m-rating, .m-region { text-align: right; font-size: smaller; }
-        .m-rating::before { content: "rating: " }
-        #tabletop { display: none; }
     }
